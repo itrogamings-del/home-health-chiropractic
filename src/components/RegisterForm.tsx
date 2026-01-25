@@ -2,12 +2,14 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import { Checkbox } from "@/components/ui/checkbox";
 import { CheckCircle, Shield, Lock } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 
 export const RegisterForm = () => {
   const { toast } = useToast();
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [consentGiven, setConsentGiven] = useState(false);
   const [formData, setFormData] = useState({
     fullName: "",
     mobile: "",
@@ -179,13 +181,25 @@ export const RegisterForm = () => {
                     />
                   </div>
 
+                  <div className="flex items-start gap-3 pt-2">
+                    <Checkbox
+                      id="gdprConsent"
+                      checked={consentGiven}
+                      onCheckedChange={(checked) => setConsentGiven(checked === true)}
+                      className="mt-0.5"
+                    />
+                    <Label htmlFor="gdprConsent" className="text-sm text-muted-foreground font-normal leading-relaxed cursor-pointer">
+                      I consent to Ben Walker Mobile Chiropractic collecting and processing my personal data to respond to my enquiry and arrange appointments, in accordance with UK GDPR.
+                    </Label>
+                  </div>
+
                   <div className="pt-4">
                     <Button
                       type="submit"
                       variant="cta"
                       size="lg"
                       className="w-full"
-                      disabled={isSubmitting}
+                      disabled={isSubmitting || !consentGiven}
                     >
                       {isSubmitting ? "Submitting..." : "Register Now"}
                     </Button>
