@@ -25,22 +25,50 @@ export const RegisterForm = () => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Simulate form submission
-    await new Promise((resolve) => setTimeout(resolve, 1000));
+    try {
+      const response = await fetch("https://formspree.io/f/xlgjqyop", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          fullName: formData.fullName,
+          mobile: formData.mobile,
+          email: formData.email,
+          address: formData.address,
+          postcode: formData.postcode,
+        }),
+      });
 
-    toast({
-      title: "Thank you for registering!",
-      description: "I will contact you directly to discuss your needs and arrange an appointment.",
-    });
+      if (response.ok) {
+        toast({
+          title: "Thank you for registering!",
+          description: "I will contact you directly to discuss your needs and arrange an appointment.",
+        });
 
-    setFormData({
-      fullName: "",
-      mobile: "",
-      email: "",
-      address: "",
-      postcode: "",
-    });
-    setIsSubmitting(false);
+        setFormData({
+          fullName: "",
+          mobile: "",
+          email: "",
+          address: "",
+          postcode: "",
+        });
+      } else {
+        toast({
+          title: "Something went wrong",
+          description: "Please try again or contact me directly.",
+          variant: "destructive",
+        });
+      }
+    } catch (error) {
+      toast({
+        title: "Something went wrong",
+        description: "Please try again or contact me directly.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const infoReasons = [
