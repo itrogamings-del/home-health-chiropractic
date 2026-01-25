@@ -32,6 +32,7 @@ export const RegisterForm = () => {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
+          "Accept": "application/json",
         },
         body: JSON.stringify({
           fullName: formData.fullName,
@@ -39,6 +40,7 @@ export const RegisterForm = () => {
           email: formData.email,
           address: formData.address,
           postcode: formData.postcode,
+          _replyto: formData.email,
         }),
       });
 
