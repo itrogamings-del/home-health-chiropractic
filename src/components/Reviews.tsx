@@ -2,17 +2,17 @@ import { Star, ExternalLink } from "lucide-react";
 
 const reviews = [
   {
-    name: "Sara Sutton",
+    name: "Sara S.",
     rating: 5,
     text: "Ben was incredibly professional and after a long time of neck and back issues I had instant results — the convenience of him coming to my home was wonderful — I can not recommend him enough — thank you Ben",
   },
   {
-    name: "Zoe Hewitt",
+    name: "Zoe H.",
     rating: 5,
     text: "I can't recommend Ben enough. He is professional and very knowledgeable, he explains each step of the treatment in detail and puts you at ease. Ben then explains what your treatment plan will look like moving forward! I feel the benefits already! I have recommended him to friends and family.",
   },
   {
-    name: "Kate Capes",
+    name: "Kate C.",
     rating: 5,
     text: "I can not recommend Ben more highly! He is so knowledgeable and professional. I have had ongoing neck and shoulder issues for years and I can not believe the range of movement I have now. Ben explained everything he was doing and what is going on anatomically and has provided me with exercises to do in between sessions. So pleased.",
   },
@@ -64,7 +64,7 @@ export const Reviews = () => {
 
         <div className="text-center">
           <a
-            href="https://g.co/kgs/your-profile"
+            href="https://share.google/8yXjMFHSdIS07u6x5"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 text-primary font-medium hover:underline transition-colors"
