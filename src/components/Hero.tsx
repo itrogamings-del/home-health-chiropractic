@@ -43,7 +43,7 @@ export const Hero = () => {
             <div className="flex flex-wrap gap-6 pt-4 animate-fade-in" style={{ animationDelay: "0.4s" }}>
               <div className="flex items-center gap-2 text-sm text-muted-foreground">
                 <MapPin className="w-4 h-4 text-primary" />
-                <span>Beverley & East Yorkshire</span>
+                <span>Beverley & Surrounding Areas</span>
               </div>
               <div className="flex items-center gap-2 text-sm text-muted-foreground">
                 <Clock className="w-4 h-4 text-primary" />
