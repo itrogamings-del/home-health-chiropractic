@@ -2,7 +2,7 @@ import { MapPin } from "lucide-react";
 
 const areas = [
   "Beverley",
-  "Surrounding areas",
+  "Surrounding local areas",
 ];
 
 export const Areas = () => {
